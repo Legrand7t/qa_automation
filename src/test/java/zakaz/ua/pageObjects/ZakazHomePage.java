@@ -5,6 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class ZakazHomePage extends BasePage {
 
 
@@ -48,5 +50,17 @@ public class ZakazHomePage extends BasePage {
         driver.findElement(By.xpath("//*[@id='react-tabs-2']")).click();
         driver.findElement(By.xpath("//*[@id='react-tabs-3']/div[1]/div/div[2]/div")).click();
         driver.findElement(By.xpath("//*[@id='react-select-4-option-0']")).click();
+    }
+
+    public List<WebElement> getLangSwitchButtons () {
+        return driver.findElements(By.xpath("//span[contains(@class, 'jsx-2339030531 switch-locale__link')]"));
+    }
+
+    public List<WebElement> getStoreTile () {
+        return driver.findElements(By.xpath("//li[contains(@data-testid, 'storeTile')]"));
+    }
+
+    public List<WebElement> getVegItems () {
+        return driver.findElements(By.xpath("//div/span[contains(text(), 'овочі')]"));
     }
 }
