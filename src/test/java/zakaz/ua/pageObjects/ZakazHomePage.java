@@ -22,6 +22,11 @@ public class ZakazHomePage extends BasePage {
         driver.findElement(By.xpath("//input[@placeholder='Пошук у МегаМаркеті']")).sendKeys("finlandia\n");
     }
 
+    public void getSearchField(String str) {
+        driver.findElement(By.xpath("//input[@placeholder='Пошук у МегаМаркеті']")).sendKeys(str + "\n");
+    }
+
+
     public void proofOfAge() {
         driver.findElement(By.xpath("//button[text()='Так, мені 18+']")).click();
     }
